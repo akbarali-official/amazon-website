@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amazon.com. Spend less. Smile more.</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════ -->
+<header class="amz-header">
+  <div class="row1">
+    <a href="#" class="logo-link nav-hl">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="amazon" class="logo-img"/>
+      <span class="logo-com">.com</span>
+    </a>
+    <a href="#" class="deliver nav-hl d-only">
+      <span class="del-top">Deliver to</span>
+      <span class="del-bot"><i class="fas fa-map-marker-alt"></i> Pakistan</span>
+    </a>
+    <div class="searchbox d-search">
+      <div class="sc-wrap" id="scWrap">
+        <button class="sc-btn" id="scBtn" type="button"><span id="scLabel">All</span><i class="fas fa-caret-down"></i></button>
+        <div class="sc-drop" id="scDrop">
+          <ul id="scList">
+            <li class="sc-active" data-val="All">All Departments</li>
+            <li data-val="Electronics">Electronics</li>
+            <li data-val="Books">Books</li>
+            <li data-val="Clothing">Clothing, Shoes &amp; Jewelry</li>
+            <li data-val="Computers">Computers</li>
+            <li data-val="Home & Kitchen">Home &amp; Kitchen</li>
+            <li data-val="Toys">Toys &amp; Games</li>
+            <li data-val="Sports">Sports &amp; Outdoors</li>
+            <li data-val="Beauty">Beauty &amp; Personal Care</li>
+            <li data-val="Grocery">Grocery &amp; Gourmet Food</li>
+            <li data-val="Health">Health &amp; Household</li>
+            <li data-val="Pet Supplies">Pet Supplies</li>
+            <li data-val="Automotive">Automotive</li>
+            <li data-val="Movies & TV">Movies &amp; TV</li>
+            <li data-val="Video Games">Video Games</li>
+            <li data-val="Garden">Garden &amp; Outdoor</li>
+            <li data-val="Industrial">Industrial &amp; Scientific</li>
+            <li data-val="Kindle Store">Kindle Store</li>
+            <li data-val="Prime Video">Prime Video</li>
+            <li data-val="Software">Software</li>
+          </ul>
+        </div>
+      </div>
+      <input type="text" class="s-input" id="sInput" placeholder="Search Amazon" autocomplete="off"/>
+      <button class="s-btn" id="sBtn"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="lang nav-hl d-only"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="flag-img"/><span class="lang-en">EN</span><i class="fas fa-caret-down"></i></div>
+    <div class="account nav-hl d-only" id="accWrap">
+      <span class="acc-top">Hello, sign in</span>
+      <span class="acc-bot">Account &amp; Lists <i class="fas fa-caret-down"></i></span>
+      <div class="acc-drop">
+        <div class="acd-s"><button class="acd-btn">Sign in</button><p>New customer? <a href="#">Start here.</a></p></div>
+        <div class="acd-cols">
+          <div class="acd-col"><strong>Your Lists</strong><a href="#">Create a List</a><a href="#">Find a List</a></div>
+          <div class="acd-col"><strong>Your Account</strong><a href="#">Account</a><a href="#">Orders</a><a href="#">Prime</a><a href="#">Gift Cards</a></div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="returns nav-hl d-only"><span class="acc-top">Returns</span><span class="acc-bot">&amp; Orders</span></a>
+    <a href="#" class="cart nav-hl" id="cartLink"><div class="cart-iw"><span class="cart-n" id="cartNum">0</span><i class="fas fa-shopping-cart cart-i"></i></div><span class="cart-t">Cart</span></a>
+    <button class="hamburger m-only" id="hamburger"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="mob-search m-only">
+    <div class="searchbox"><div class="sc-wrap"><button class="sc-btn" type="button"><span>All</span><i class="fas fa-caret-down"></i></button></div>
+    <input type="text" class="s-input" id="mInput" placeholder="Search Amazon" autocomplete="off"/><button class="s-btn" id="mBtn"><i class="fas fa-search"></i></button></div>
+  </div>
+  <nav class="row2">
+    <button class="n2a n2h" id="n2AllBtn"><i class="fas fa-bars"></i><span>All</span></button>
+    <div class="n2l"><a href="#" class="n2k n2h">Today's Deals</a><a href="#" class="n2k n2h">Gift Cards</a><a href="#" class="n2k n2h">Sell</a><a href="#" class="n2k n2h">Registry</a><a href="#" class="n2k n2h">Prime Video</a><a href="#" class="n2k n2h">Customer Service</a></div>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drw-h"><i class="fas fa-user-circle"></i><span>Hello, Sign in</span><button id="drwClose"><i class="fas fa-times"></i></button></div>
+    <div class="drw-b">
+      <div class="drw-s"><div class="drw-st">Shop by Department</div><a href="#" class="drw-l">Electronics</a><a href="#" class="drw-l">Computers</a><a href="#" class="drw-l">Smart Home</a><a href="#" class="drw-l">Beauty &amp; Personal Care</a><a href="#" class="drw-l">Books</a><a href="#" class="drw-l">Clothing, Shoes &amp; Jewelry</a><a href="#" class="drw-l">Grocery</a><a href="#" class="drw-l">Health &amp; Household</a><a href="#" class="drw-l">Home &amp; Kitchen</a><a href="#" class="drw-l">Pet Supplies</a><a href="#" class="drw-l">Sports &amp; Outdoors</a><a href="#" class="drw-l">Toys &amp; Games</a><a href="#" class="drw-l">Video Games</a></div>
+      <div class="drw-s"><div class="drw-st">Help &amp; Settings</div><a href="#" class="drw-l">Your Account</a><a href="#" class="drw-l">Customer Service</a><a href="#" class="drw-l drw-si">Sign In</a></div>
+    </div>
+  </aside>
+</header>
+
+<!-- ══════════════════════════════════════════
+     HERO SLIDER
+══════════════════════════════════════════ -->
+<section class="hero-sec">
+  <div class="hero-track-wrap">
+    <div class="hero-track" id="heroTrack">
+      <div class="h-slide h-s1"><div class="h-txt"><h1>Gaming store</h1><p>Upgrade your gaming gear</p><a href="#" class="h-btn">Shop now</a></div></div>
+      <div class="h-slide h-s2"><div class="h-txt"><h1>Father's Day Deals</h1><p>Save on gifts for Dad</p><a href="#" class="h-btn">Shop now</a></div></div>
+      <div class="h-slide h-s3"><div class="h-txt"><h1>New Home Arrivals</h1><p>Refresh your space under $50</p><a href="#" class="h-btn">Shop now</a></div></div>
+      <div class="h-slide h-s4"><div class="h-txt"><h1>Fashion for Less</h1><p>Top styles at great prices</p><a href="#" class="h-btn">Shop now</a></div></div>
+    </div>
+  </div>
+  <button class="h-btn-arr h-prev" id="hPrev"><i class="fas fa-chevron-left"></i></button>
+  <button class="h-btn-arr h-next" id="hNext"><i class="fas fa-chevron-right"></i></button>
+  <div class="h-dots" id="hDots"></div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CARDS ROW 1  (4 cards)
+══════════════════════════════════════════ -->
+<section class="cards-sec">
+  <div class="c-grid">
+    <div class="pcard">
+      <h3 class="pc-title">Top categories in Kitchen appliances</h3>      <div class="kitchen-wrap">
+        <a href="#" class="k-main"><img src="cooker.png" alt="Cooker"/><span>Cooker</span></a>
+        <div class="k-row3">
+          <a href="#" class="k-sm"><img src="coffee.png" alt="Coffee"/><span>Coffee</span></a>
+          <a href="#" class="k-sm"><img src="pots and pans.png" alt="Pots and Pans"/><span>Pots and Pans</span></a>
+          <a href="#" class="k-sm"><img src="kettle.png" alt="Kettles"/><span>Kettles</span></a>
+        </div>
+      </div>
+      <a href="#" class="pc-foot">Explore all products in Kitchen</a>
+    </div>
+    <div class="pcard pcard-game">
+      <h3 class="pc-title">Get your game on</h3>
+      <div class="game-wrap"><img src="gaming controller.png" alt="Gaming"/></div>
+      <a href="#" class="pc-foot">Shop gaming</a>
+    </div>
+    <div class="pcard">
+      <h3 class="pc-title">New home arrivals under $50</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="kitchen and dinning.png" alt="Kitchen & Dining" loading="lazy"/><span>Kitchen &amp; Dining</span></a>
+        <a href="#" class="gc"><img src="Home improvement.png" alt="Home Improvement" loading="lazy"/><span>Home Improvement</span></a>
+        <a href="#" class="gc"><img src="Decore.png" alt="Décor" loading="lazy"/><span>Décor</span></a>
+        <a href="#" class="gc"><img src="Bed bath.png" alt="Bedding & Bath" loading="lazy"/><span>Bedding &amp; Bath</span></a>
+      </div>
+      <a href="#" class="pc-foot">Shop the latest from Home</a>
+    </div>
+    <div class="pcard">
+      <h3 class="pc-title">Grilling must-haves for Dads</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Grilling tools.png" alt="Grilling pans" loading="lazy"/><span>Grilling pans</span></a>
+        <a href="#" class="gc"><img src="Aprons.png" alt="Aprons" loading="lazy"/><span>Aprons</span></a>
+        <a href="#" class="gc"><img src="Grilling tools.png" alt="Grilling tools" loading="lazy"/><span>Grilling tools</span></a>
+        <a href="#" class="gc"><img src="Gloves.png" alt="Gloves" loading="lazy"/><span>Gloves</span></a>
+      </div>
+      <a href="#" class="pc-foot">Shop Father's Day gifts</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CARDS ROW 2  (4 cards)
+══════════════════════════════════════════ -->
+<section class="cards-sec cards-sec2">
+  <div class="c-grid">
+    <div class="pcard">
+      <h3 class="pc-title">Shop Fashion for less</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Jeans.png" alt="Jeans" loading="lazy"/><span>Jeans under $50</span></a>
+        <a href="#" class="gc"><img src="Tops.png" alt="Tops" loading="lazy"/><span>Tops under $25</span></a>
+        <a href="#" class="gc"><img src="Dresses.png" alt="Dresses" loading="lazy"/><span>Dresses under $30</span></a>
+        <a href="#" class="gc"><img src="Shoes.png" alt="Shoes" loading="lazy"/><span>Shoes under $50</span></a>
+      </div>
+      <a href="#" class="pc-foot">Explore more gifts</a>
+    </div>
+    <div class="pcard">
+      <h3 class="pc-title">Shop Father's Day deals</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Apprale.png" alt="Apparel" loading="lazy"/><span>Apparel</span></a>
+        <a href="#" class="gc"><img src="Personal Care.png" alt="Personal Care" loading="lazy"/><span>Personal Care</span></a>
+        <a href="#" class="gc"><img src="Tech.png" alt="Tech" loading="lazy"/><span>Tech</span></a>
+        <a href="#" class="gc"><img src="Shoes.png" alt="Shoes" loading="lazy"/><span>Shoes</span></a>
+      </div>
+      <a href="#" class="pc-foot">Explore more gifts</a>
+    </div>
+    <div class="pcard">
+      <h3 class="pc-title">Fashion trends you like</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Jeans.png" alt="Jeans" loading="lazy"/><span>Jeans</span></a>
+        <a href="#" class="gc"><img src="Tops.png" alt="Tops" loading="lazy"/><span>Tops</span></a>
+        <a href="#" class="gc"><img src="Sneakers.png" alt="Sneakers" loading="lazy"/><span>Sneakers</span></a>
+        <a href="#" class="gc"><img src="Watches.png" alt="Watches" loading="lazy"/><span>Watches</span></a>
+      </div>
+      <a href="#" class="pc-foot">Explore more</a>
+    </div>
+    <div class="pcard">
+      <h3 class="pc-title">Easy updates for elevated spaces</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Lighting.png" alt="Lighting" loading="lazy"/><span>Lighting</span></a>
+        <a href="#" class="gc"><img src="Rugs.png" alt="Rugs" loading="lazy"/><span>Rugs</span></a>
+        <a href="#" class="gc"><img src="Wall Arts.png" alt="Wall Art" loading="lazy"/><span>Wall Art</span></a>
+        <a href="#" class="gc"><img src="Curtains.png" alt="Curtains" loading="lazy"/><span>Curtains</span></a>
+      </div>
+      <a href="#" class="pc-foot">Shop home products</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PRODUCT SLIDER 1 — Beauty
+══════════════════════════════════════════ -->
+<section class="ps-sec">
+  <h2 class="ps-h">Popular products in Beauty internationally</h2>
+  <div class="ps-outer">
+    <button class="ps-arr ps-l" id="b1Prev"><i class="fas fa-chevron-left"></i></button>
+    <div class="ps-tw"><div class="ps-tr" id="b1Track">
+      <div class="ps-it"><a href="#"><img src="Hair Color.png" alt="Hair Color"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Eos Lotion.png" alt="EOS Body Lotion"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Body Butter.png" alt="Body Butter"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Vitamin C Serum.png" alt="Vitamin C Serum"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Olay.png" alt="Olay Berry Wash"/></a></div>
+      <div class="ps-it"><a href="#"><img src="ThreaBreath Rinse.png" alt="TheraBreath Rinse"/></a></div>
+      <div class="ps-it"><a href="#"><img src="anua serum.png" alt="Anua Serum"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Electric tooth brush.png" alt="Electric Toothbrush"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Face Mask.png" alt="Face Mask"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Hair Oil.png" alt="Hair Oil"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Retinol Cream.png" alt="Retinol Cream"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Sunscreen.png" alt="Sunscreen"/></a></div>
+    </div></div>
+    <button class="ps-arr ps-r" id="b1Next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PRODUCT SLIDER 2 — Clothing
+══════════════════════════════════════════ -->
+<section class="ps-sec">
+  <h2 class="ps-h">Best Sellers in Clothing, Shoes &amp; Jewelry</h2>
+  <div class="ps-outer">
+    <button class="ps-arr ps-l" id="b2Prev"><i class="fas fa-chevron-left"></i></button>
+    <div class="ps-tw"><div class="ps-tr" id="b2Track">
+      <div class="ps-it ps-tall"><a href="#"><img src="Black_T shirts.png" alt="Black T-Shirts"/></a></div>
+      <div class="ps-it ps-tall"><a href="#"><img src="Button Down Shirt.png" alt="Button Down Shirt"/></a></div>
+      <div class="ps-it ps-tall"><a href="#"><img src="Linen shirt.png" alt="Linen Shirt"/></a></div>
+      <div class="ps-it ps-tall"><a href="#"><img src="Zip_Up Hodie.png" alt="Zip-Up Hoodie"/></a></div>
+      <div class="ps-it ps-tall"><a href="#"><img src="Crew-T Shirt.png" alt="Crew T-Shirt"/></a></div>
+      <div class="ps-it ps-tall"><a href="#"><img src="Woman Crop Top.png" alt="Women Crop Top"/></a></div>
+      <div class="ps-it ps-tall"><a href="#"><img src="Shorts Set.png" alt="Shorts Set"/></a></div>
+      <div class="ps-it ps-tall"><a href="#"><img src="Crocs Blue.png" alt="Crocs Blue"/></a></div>
+      <div class="ps-it ps-tall"><a href="#"><img src="Nike Shoes.png" alt="Nike Shoes"/></a></div>
+      <div class="ps-it ps-tall"><a href="#"><img src="Adidas Sneakers.png" alt="Adidas Sneakers"/></a></div>
+    </div></div>
+    <button class="ps-arr ps-r" id="b2Next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="ps-prog"><div class="ps-pfill" id="b2Fill"></div></div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CARDS ROW 3 — (screenshot: travel, family, wireless, watches)
+══════════════════════════════════════════ -->
+<section class="cards-sec cards-sec3">
+  <div class="c-grid">
+    <!-- Most-loved travel essentials -->
+    <div class="pcard">
+      <h3 class="pc-title">Most-loved travel essentials</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Back Packs.png" alt="Backpacks" loading="lazy"/><span>Backpacks</span></a>
+        <a href="#" class="gc"><img src="suitcase.png" alt="Suitcase" loading="lazy"/><span>Suitcase</span></a>
+        <a href="#" class="gc"><img src="Accessories.png" alt="Accessories" loading="lazy"/><span>Accessories</span></a>
+        <a href="#" class="gc"><img src="Hand Bag.png" alt="Handbags" loading="lazy"/><span>Handbags</span></a>
+      </div>
+      <a href="#" class="pc-foot">Discover more</a>
+    </div>
+    <!-- Have more fun with family -->
+    <div class="pcard">
+      <h3 class="pc-title">Have more fun with family</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Outdoor Play.png" alt="Outdoor Play Sets" loading="lazy"/><span>Outdoor Play Sets</span></a>
+        <a href="#" class="gc"><img src="Pretend Play Toys.png" alt="Learning Toys" loading="lazy"/><span>Learning Toys</span></a>
+        <a href="#" class="gc"><img src="Action Figure.png" alt="Action Figures" loading="lazy"/><span>Action Figures</span></a>
+        <a href="#" class="gc"><img src="Pretend Play Toys2.png" alt="Pretend Play Toys" loading="lazy"/><span>Pretend Play Toys</span></a>
+      </div>
+      <a href="#" class="pc-foot">See more</a>
+    </div>
+    <!-- Wireless Tech -->
+    <div class="pcard">
+      <h3 class="pc-title"> Wireless Tech </h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Smartphones.png" alt="Smartphones" loading="lazy"/><span>Smartphones</span></a>
+        <a href="#" class="gc"><img src="Watches.png" alt="Watches" loading="lazy"/><span>Watches</span></a>
+        <a href="#" class="gc"><img src="Headphones.png" alt="Headphones" loading="lazy"/><span>Headphones</span></a>
+        <a href="#" class="gc"><img src="Tablets.png" alt="Tablets" loading="lazy"/><span>Tablets</span></a>
+      </div>
+      <a href="#" class="pc-foot">Discover more</a>
+    </div>
+    <!-- Most-loved watches -->
+    <div class="pcard">
+      <h3 class="pc-title">Most-loved watches</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Women.png" alt="Women" loading="lazy"/><span>Women</span></a>
+        <a href="#" class="gc"><img src="Men.png" alt="Men" loading="lazy"/><span>Men</span></a>
+        <a href="#" class="gc"><img src="Girls.png" alt="Girls" loading="lazy"/><span>Girls</span></a>
+        <a href="#" class="gc"><img src="Boys.png" alt="Boys" loading="lazy"/><span>Boys</span></a>
+      </div>
+      <a href="#" class="pc-foot">Discover more</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PRODUCT SLIDER 3 — Home & Kitchen
+══════════════════════════════════════════ -->
+<section class="ps-sec">
+  <h2 class="ps-h">Best Sellers in Home &amp; Kitchen</h2>
+  <div class="ps-outer">
+    <button class="ps-arr ps-l" id="b3Prev"><i class="fas fa-chevron-left"></i></button>
+    <div class="ps-tw"><div class="ps-tr" id="b3Track">
+      <div class="ps-it"><a href="#"><img src="Air Fryer.png" alt="Air Fryer"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Coffee Maker.png" alt="Coffee Maker"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Blender.png" alt="Blender"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Cookware.png" alt="Cookware Set"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Instant Post.png" alt="Instant Pot"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Vacuum Cleaners.png" alt="Vacuum Cleaner"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Knife Set.png" alt="Knife Set"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Storage Boxes.png" alt="Storage Boxes"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Bed Sheets.png" alt="Bed Sheets"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Pillows.png" alt="Pillows"/></a></div>
+    </div></div>
+    <button class="ps-arr ps-r" id="b3Next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CARDS ROW 4  (4 cards)
+══════════════════════════════════════════ -->
+<section class="cards-sec cards-sec4">
+  <div class="c-grid">
+    <div class="pcard">
+      <h3 class="pc-title">Electronics under $50</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Echo dot.png" alt="Echo Dot" loading="lazy"/><span>Echo Dot</span></a>
+        <a href="#" class="gc"><img src="FireStick.png" alt="Fire Stick" loading="lazy"/><span>Fire Stick</span></a>
+        <a href="#" class="gc"><img src="Ear buds.png" alt="Earbuds" loading="lazy"/><span>Earbuds</span></a>
+        <a href="#" class="gc"><img src="Tablets2.png" alt="Tablet" loading="lazy"/><span>Tablet</span></a>
+      </div>
+      <a href="#" class="pc-foot">Shop electronics</a>
+    </div>
+    <div class="pcard">
+      <h3 class="pc-title">Pet supplies best sellers</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Dog Food.png" alt="Dog Food" loading="lazy"/><span>Dog Food</span></a>
+        <a href="#" class="gc"><img src="Cat Litter.png" alt="Cat Litter" loading="lazy"/><span>Cat Litter</span></a>
+        <a href="#" class="gc"><img src="Pet Bag.png" alt="Pet Bed" loading="lazy"/><span>Pet Bed</span></a>
+        <a href="#" class="gc"><img src="Pretend Play Toys2.png" alt="Toys" loading="lazy"/><span>Pet Toys</span></a>
+      </div>
+      <a href="#" class="pc-foot">Shop pet supplies</a>
+    </div>
+    <div class="pcard">
+      <h3 class="pc-title">Sports &amp; Outdoors</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Yoga Mat.png" alt="Yoga Mat" loading="lazy"/><span>Yoga Mat</span></a>
+        <a href="#" class="gc"><img src="Dumbe=Dumbbells.png" alt="Dumbbells" loading="lazy"/><span>Dumbbells</span></a>
+        <a href="#" class="gc"><img src="Resistance Bands.png" alt="Resistance Bands" loading="lazy"/><span>Resistance Bands</span></a>
+        <a href="#" class="gc"><img src="Running Shoes.png" alt="Running Shoes" loading="lazy"/><span>Running Shoes</span></a>
+      </div>
+      <a href="#" class="pc-foot">Shop sports</a>
+    </div>
+    <div class="pcard">
+      <h3 class="pc-title">Books &amp; Kindle reads</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Bed Sheets.png" alt="Bestsellers" loading="lazy"/><span>Bestsellers</span></a>
+        <a href="#" class="gc"><img src="NewReleases.png" alt="New Releases" loading="lazy"/><span>New Releases</span></a>
+        <a href="#" class="gc"><img src="Children's Books.png" alt="Children" loading="lazy"/><span>Children's</span></a>
+        <a href="#" class="gc"><img src="Mystry.png" alt="Mystery" loading="lazy"/><span>Mystery</span></a>
+      </div>
+      <a href="#" class="pc-foot">Shop books</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PRODUCT SLIDER 4 — Electronics
+══════════════════════════════════════════ -->
+<section class="ps-sec">
+  <h2 class="ps-h">Best Sellers in Electronics</h2>
+  <div class="ps-outer">
+    <button class="ps-arr ps-l" id="b4Prev"><i class="fas fa-chevron-left"></i></button>
+    <div class="ps-tw"><div class="ps-tr" id="b4Track">
+      <div class="ps-it"><a href="#"><img src="Echo dot.png" alt="Echo Dot"/></a></div>
+      <div class="ps-it"><a href="#"><img src="FireStick.png" alt="Fire TV Stick"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Kindle.png" alt="Kindle"/></a></div>
+      <div class="ps-it"><a href="#"><img src="RingCamera.png" alt="Ring Camera"/></a></div>
+      <div class="ps-it"><a href="#"><img src="AirPods.png" alt="AirPods"/></a></div>
+      <div class="ps-it"><a href="#"><img src="SamsungTv.png" alt="Samsung TV"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Headphones2.png" alt="Sony Headphones"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Roomba.png" alt="Roomba"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Instant Post.png" alt="Instant Pot"/></a></div>
+      <div class="ps-it"><a href="#"><img src="GamingMouse.png" alt="Gaming Mouse"/></a></div>
+    </div></div>
+    <button class="ps-arr ps-r" id="b4Next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CARDS ROW 5 — last 4 cards
+══════════════════════════════════════════ -->
+<section class="cards-sec cards-sec5">
+  <div class="c-grid">
+    <div class="pcard">
+      <h3 class="pc-title">Health &amp; Household essentials</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Vitamins.png" alt="Vitamins" loading="lazy"/><span>Vitamins</span></a>
+        <a href="#" class="gc"><img src="FirstAid.png" alt="First Aid" loading="lazy"/><span>First Aid</span></a>
+        <a href="#" class="gc"><img src="VitaminsCleaning.png" alt="Cleaning" loading="lazy"/><span>Cleaning</span></a>
+        <a href="#" class="gc"><img src="FA Personal Care.png" alt="Personal Care" loading="lazy"/><span>Personal Care</span></a>
+      </div>
+      <a href="#" class="pc-foot">Shop health</a>
+    </div>
+    <div class="pcard">
+      <h3 class="pc-title">Grocery &amp; Gourmet Food</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="Snacks.png" alt="Snacks" loading="lazy"/><span>Snacks</span></a>
+        <a href="#" class="gc"><img src="Beverages.png" alt="Beverages" loading="lazy"/><span>Beverages</span></a>
+        <a href="#" class="gc"><img src="SnacksBreakfast.png" alt="Breakfast" loading="lazy"/><span>Breakfast</span></a>
+        <a href="#" class="gc"><img src="Beverages Pantry.png" alt="Pantry" loading="lazy"/><span>Pantry</span></a>
+      </div>
+      <a href="#" class="pc-foot">Shop grocery</a>
+    </div>
+    <div class="pcard">
+      <h3 class="pc-title">Toys &amp; Games for kids</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="BoardGames.png" alt="Board Games" loading="lazy"/><span>Board Games</span></a>
+        <a href="#" class="gc"><img src="Lego.png" alt="LEGO" loading="lazy"/><span>LEGO</span></a>
+        <a href="#" class="gc"><img src="Dolls.png" alt="Dolls" loading="lazy"/><span>Dolls</span></a>
+        <a href="#" class="gc"><img src="Lego Remote Control.png" alt="Remote Control" loading="lazy"/><span>Remote Control</span></a>
+      </div>
+      <a href="#" class="pc-foot">Shop toys</a>
+    </div>
+    <div class="pcard">
+      <h3 class="pc-title">Automotive essentials</h3>
+      <div class="g2x2">
+        <a href="#" class="gc"><img src="CarCare.png" alt="Car Care" loading="lazy"/><span>Car Care</span></a>
+        <a href="#" class="gc"><img src="CarInterior.png" alt="Interior" loading="lazy"/><span>Interior</span></a>
+        <a href="#" class="gc"><img src="CarLitterToys.png" alt="Electronics" loading="lazy"/><span>Electronics</span></a>
+        <a href="#" class="gc"><img src="Car Interior Tools.png" alt="Tools" loading="lazy"/><span>Tools</span></a>
+      </div>
+      <a href="#" class="pc-foot">Shop automotive</a>
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════
+     PRODUCT SLIDER 5 — Sports (last slider)
+══════════════════════════════════════════ -->
+<section class="ps-sec ps-last">
+  <h2 class="ps-h">Best Sellers in Sports &amp; Outdoors</h2>
+  <div class="ps-outer">
+    <button class="ps-arr ps-l" id="b5Prev"><i class="fas fa-chevron-left"></i></button>
+    <div class="ps-tw"><div class="ps-tr" id="b5Track">
+      <div class="ps-it"><a href="#"><img src="Yoga Mat.png" alt="Yoga Mat"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Dumbe=Dumbbells.png" alt="Dumbbells"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Resistance Bands2.png" alt="Resistance Bands"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Running Shoes2.png" alt="Running Shoes"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Tennis Rockets.png" alt="Tennis Racket"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Jumping Rope.png" alt="Jump Rope"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Campaign Gear.png" alt="Camping Gear"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Cycling Gloves.png" alt="Cycling Gloves"/></a></div>
+      <div class="ps-it"><a href="#"><img src="FootBall.png" alt="Football"/></a></div>
+      <div class="ps-it"><a href="#"><img src="Basketball.png" alt="Basketball"/></a></div>
+    </div></div>
+    <button class="ps-arr ps-r" id="b5Next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="ps-prog"><div class="ps-pfill" id="b5Fill"></div></div>
+</section>
+
+<!-- Toast -->
+<div class="toast-box" id="toastBox"><i class="fas fa-check-circle"></i><span id="toastTxt"></span></div>
+
+<!-- ══════════════════════════════════════════════
+     SEE PERSONALIZED RECOMMENDATIONS
+══════════════════════════════════════════════ -->
+<div class="signin-band">
+  <p class="sb-text">See personalized recommendations</p>
+  <a href="#" class="sb-btn">Sign in</a>
+  <p class="sb-new">New customer? <a href="#" class="sb-link">Sign here</a></p>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     BACK TO TOP
+══════════════════════════════════════════════ -->
+<button class="back-top" id="backTop">Back to top</button>
+
+<!-- ══════════════════════════════════════════════
+     MAIN FOOTER
+══════════════════════════════════════════════ -->
+<footer class="amz-footer">
+
+  <!-- ── ROW 1: 4-column links ── -->
+  <div class="ft-cols">
+
+    <div class="ft-col">
+      <h4 class="ft-col-hd">Get to Know Us</h4>
+      <a href="#" class="ft-lnk">Careers</a>
+      <a href="#" class="ft-lnk">Blog</a>
+      <a href="#" class="ft-lnk">About Amazon</a>
+      <a href="#" class="ft-lnk">Investor Relations</a>
+      <a href="#" class="ft-lnk">Amazon Devices</a>
+      <a href="#" class="ft-lnk">Amazon Science</a>
+    </div>
+
+    <div class="ft-col">
+      <h4 class="ft-col-hd">Make Money with Us</h4>
+      <a href="#" class="ft-lnk">Sell products on Amazon</a>
+      <a href="#" class="ft-lnk">Sell on Amazon Business</a>
+      <a href="#" class="ft-lnk">Sell apps on Amazon</a>
+      <a href="#" class="ft-lnk">Become an Affiliate</a>
+      <a href="#" class="ft-lnk">Advertise Your Products</a>
+      <a href="#" class="ft-lnk">Self-Publish with Us</a>
+      <a href="#" class="ft-lnk">Host an Amazon Hub</a>
+      <a href="#" class="ft-lnk">&rsaquo; See More Make Money with Us</a>
+    </div>
+
+    <div class="ft-col">
+      <h4 class="ft-col-hd">Amazon Payment Products</h4>
+      <a href="#" class="ft-lnk">Amazon Business Card</a>
+      <a href="#" class="ft-lnk">Shop with Points</a>
+      <a href="#" class="ft-lnk">Reload Your Balance</a>
+      <a href="#" class="ft-lnk">Amazon Currency Converter</a>
+    </div>
+
+    <div class="ft-col">
+      <h4 class="ft-col-hd">Let Us Help You</h4>
+      <a href="#" class="ft-lnk">Amazon and COVID-19</a>
+      <a href="#" class="ft-lnk">Your Account</a>
+      <a href="#" class="ft-lnk">Your Orders</a>
+      <a href="#" class="ft-lnk">Shipping Rates &amp; Policies</a>
+      <a href="#" class="ft-lnk">Returns &amp; Replacements</a>
+      <a href="#" class="ft-lnk">Manage Your Content and Devices</a>
+      <a href="#" class="ft-lnk">Help</a>
+    </div>
+
+  </div>
+
+  <!-- ── DIVIDER ── -->
+  <div class="ft-divider"></div>
+
+  <!-- ── LOGO + LOCALE BUTTONS ── -->
+  <div class="ft-logo-row">
+    <a href="#" class="ft-logo-link">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="amazon" class="ft-logo"/>
+    </a>
+    <div class="ft-locale-btns">
+      <button class="ft-loc-btn">
+        <i class="fas fa-globe"></i> English
+        <i class="fas fa-caret-down"></i>
+      </button>
+      <button class="ft-loc-btn">
+        PKR - Pakistani Rupee
+        <i class="fas fa-caret-down"></i>
+      </button>
+      <button class="ft-loc-btn">
+        <img src="https://flagcdn.com/w20/us.png" alt="US" class="loc-flag"/> United States
+        <i class="fas fa-caret-down"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── DIVIDER ── -->
+  <div class="ft-divider"></div>
+
+  <!-- ── BOTTOM GRID: Amazon subsidiaries ── -->
+  <div class="ft-grid">
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Amazon Music</a>
+      <p class="fg-sub">Stream millions of songs</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Amazon Ads</a>
+      <p class="fg-sub">Reach customers wherever they spend their time</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">6pm</a>
+      <p class="fg-sub">Score deals on fashion brands</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">AbeBooks</a>
+      <p class="fg-sub">Books, art &amp; collectibles</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">ACX</a>
+      <p class="fg-sub">Audiobook Publishing Made Easy</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Sell on Amazon</a>
+      <p class="fg-sub">Start a Selling Account</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Veeqo</a>
+      <p class="fg-sub">Shipping Software Inventory Management</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Amazon Business</a>
+      <p class="fg-sub">Everything For Your Business</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">AmazonGlobal</a>
+      <p class="fg-sub">Ship Orders Internationally</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Amazon Web Services</a>
+      <p class="fg-sub">Scalable Cloud Computing Services</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Audible</a>
+      <p class="fg-sub">Listen to Books &amp; Original Audio Performances</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Box Office Mojo</a>
+      <p class="fg-sub">Find Movie Box Office Data</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Goodreads</a>
+      <p class="fg-sub">Book reviews &amp; recommendations</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">IMDb</a>
+      <p class="fg-sub">Movies, TV &amp; Celebrities</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">IMDbPro</a>
+      <p class="fg-sub">Get Info Entertainment Professionals Need</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Kindle Direct Publishing</a>
+      <p class="fg-sub">Indie Digital &amp; Print Publishing Made Easy</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Prime Video Direct</a>
+      <p class="fg-sub">Video Distribution Made Easy</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Shopbop</a>
+      <p class="fg-sub">Designer Fashion Brands</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Woot!</a>
+      <p class="fg-sub">Deals and Shenanigans</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Zappos</a>
+      <p class="fg-sub">Shoes &amp; Clothing</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Ring</a>
+      <p class="fg-sub">Smart Home Security Systems</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">eero WiFi</a>
+      <p class="fg-sub">Stream 4K Video in Every Room</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Blink</a>
+      <p class="fg-sub">Smart Security for Every Home</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Neighbors App</a>
+      <p class="fg-sub">Real-Time Crime &amp; Safety Alerts</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">PillPack</a>
+      <p class="fg-sub">Pharmacy Simplified</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Amazon Renewed</a>
+      <p class="fg-sub">Like-new products you can trust</p>
+    </div>
+
+    <div class="ft-grid-item">
+      <a href="#" class="fg-title">Amazon Second Chance</a>
+      <p class="fg-sub">Pass it on, trade it in, give it a second life</p>
+    </div>
+
+  </div>
+
+  <!-- ── DIVIDER ── -->
+  <div class="ft-divider"></div>
+
+  <!-- ── BOTTOM LEGAL ── -->
+  <div class="ft-legal">
+    <div class="ft-legal-links">
+      <a href="#">Conditions of Use</a>
+      <a href="#">Privacy Notice</a>
+      <a href="#">Consumer Health Data Privacy Disclosure</a>
+      <a href="#">Your Ads Privacy Choices</a>
+    </div>
+    <p class="ft-copy">&copy; 1996-2025, Amazon.com, Inc. or its affiliates</p>
+  </div>
+
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
